@@ -56,7 +56,7 @@ public class Client implements InterruptableByData, InterruptableByConnection {
                     System.err.println(params[0] + " >> " + params[1]);
                     break;
                 case "SM":
-                    System.out.println(params[0] + " >> " + params[1]);
+                    System.out.println("\r" + params[0] + " >> " + params[1]);
                     break;
                 case "SVC":
                     switch (params[0]) {

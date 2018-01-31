@@ -16,7 +16,7 @@ public class Server implements InterruptableByConnection {
     private final static int MAX_CLIENTS = 4;
     private final static char DATA_END_CHAR = '#';
 
-    private ArrayList<UserProcessor> userProcessors = new ArrayList<>(MAX_CLIENTS);
+    private volatile ArrayList<UserProcessor> userProcessors = new ArrayList<>(MAX_CLIENTS);
     private MultiClientHandledServer chatServer;
 
     Server(int port) throws IOException {

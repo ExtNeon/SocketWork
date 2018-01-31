@@ -14,8 +14,5 @@ public class ChatSocketUtils {
         for (int i = 0; i < text.length(); i++) {
             outputStream.write((int) text.charAt(i));
         }
-        /*try (PrintWriter responceWriter = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()))) {
-            responceWriter.println(text);
-        }*/
     }
 }
