@@ -9,10 +9,13 @@ import java.net.SocketException;
 import java.util.ArrayList;
 
 /**
- * Created by Кирилл on 25.01.2018.
+ * Данный класс в отдельном потоке обрабатывает подключения и отключения клиентов, реализуя многопользовательскую структуру.
+ * Список клиентов сохраняется в отдельном массиве, и к нему всегда можно обратиться.
+ * Также, можно подключить обработчики событий подключения и отключения клиентов, которые вызываются в отдельном потоке.
+ * @author Малякин Кирилл, гр 15ИТ20.
  */
 public class ConnectionsListProcessor extends Thread implements InterruptableByConnection, Closeable {
-    private ArrayList<ThreadedHandledConnection> clients = new ArrayList<>();
+    private volatile ArrayList<ThreadedHandledConnection> clients = new ArrayList<>();
     private ServerSocket serverSocket;
     private InterruptableByConnection connectionHandler = null;
 

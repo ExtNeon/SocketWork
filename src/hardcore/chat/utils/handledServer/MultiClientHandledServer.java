@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 
 /**
- * Created by Кирилл on 25.01.2018.
+ * Сервер, основанный на сокетах. Автоматически принимает соединения. Есть возможность подключения различных обработчиков.
+ * @author Малякин Кирилл, гр. 15ИТ20.
  */
 public class MultiClientHandledServer extends Thread implements Closeable {
     private ConnectionsListProcessor connectionsListProcessor;
